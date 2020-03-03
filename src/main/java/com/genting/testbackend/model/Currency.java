@@ -2,12 +2,18 @@ package com.genting.testbackend.model;
 
 import lombok.Data;
 
-import java.sql.Timestamp;
-
 @Data
 public class Currency {
     private String name;
     private double buyRate;
     private double sellRate;
-    private Timestamp time;
+
+    public Currency() {
+    }
+
+    public Currency(String name, double buyRate, double sellRate) {
+        this.name = name;
+        this.buyRate = buyRate;
+        this.sellRate = sellRate;
+    }
 }

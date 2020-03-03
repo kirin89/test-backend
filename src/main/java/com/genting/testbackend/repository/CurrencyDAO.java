@@ -30,23 +30,4 @@ public class CurrencyDAO {
             throw new Exception("Currency " + name + " is not found");
         }
     }
-
-    public double convertCurrency(String cnyName, String action, double amount) throws Exception {
-        Currency cny = getByName(cnyName);
-        double result;
-
-        if(amount < 0){
-            throw new Exception("Amount is invalid");
-        }
-        if(action.equalsIgnoreCase("buy")){
-            result = amount * cny.getBuyRate();
-        } else if(action.equalsIgnoreCase("sell")){
-            result = amount * cny.getSellRate();
-        } else {
-            throw new Exception("Action is invalid");
-        }
-
-        // round to 2 digits
-        return (double) Math.round(result * 1000) / 1000;
-    }
 }

@@ -14,7 +14,6 @@ public class CurrencyMapper implements RowMapper<Currency> {
         cny.setName(rs.getString("NAME"));
         cny.setBuyRate(rs.getDouble("BUY_RATE"));
         cny.setSellRate(rs.getDouble("SELL_RATE"));
-        cny.setTime(rs.getTimestamp("TIME"));
 
         return cny;
     }
